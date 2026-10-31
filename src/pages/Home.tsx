@@ -1,0 +1,8 @@
+import { useState } from "react";
+import Login from "../features/auth/components/Login";
+import Register from "../features/auth/components/Register";
+
+export default function Home() {
+  const [active, setActive] = useState(true);
+  return <main className="auth-page"><div className="auth-shell"><section className="auth-intro"><span className="auth-eyebrow">A COMMUNITY BUILT TOGETHER</span><h1>Route Posts</h1><p className="auth-lead">Connect with friends and the world around you.</p><article className="academy-card"><span className="auth-eyebrow">ABOUT ROUTE ACADEMY</span><h2>Egypt's Leading IT Training Center Since 2012</h2><p>We help people build practical skills in programming, web development, and application development, and support them as they grow into the tech industry.</p><div className="academy-stats"><div><b>2012</b><small>FOUNDED</small></div><div><b>40K+</b><small>GRADUATES</small></div><div><b>50+</b><small>PARTNER COMPANIES</small></div><div><b>5</b><small>BRANCHES</small></div><div><b>20</b><small>DIPLOMAS AVAILABLE</small></div></div></article></section><section className="auth-card"><div className="auth-switch"><button className={active ? "on" : ""} onClick={() => setActive(true)}>Login</button><button className={!active ? "on" : ""} onClick={() => setActive(false)}>Register</button></div><h2>{active ? "Log in to Route Posts" : "Join Route Posts"}</h2><p className="auth-subtitle">{active ? "Log in and continue your social journey." : "Create an account and meet your community."}</p>{active ? <Login/> : <Register/>}{active && <a className="forgot-link" href="#forgot" onClick={e => e.preventDefault()}>Forgot password?</a>}</section></div></main>;
+}
