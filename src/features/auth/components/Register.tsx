@@ -2,7 +2,7 @@ import { Button, Select, TextInput } from "flowbite-react";
 import { useForm } from "react-hook-form";
 import { ImSpinner7 } from "react-icons/im";
 import { IoPersonSharp } from "react-icons/io5";
-import { zodResolver } from "./../../../../node_modules/@hookform/resolvers/zod/src/zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import {
   RegisterSchemObj,
   type RegiterSchema,

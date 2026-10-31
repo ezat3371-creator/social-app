@@ -28,9 +28,7 @@ export  const RegisterSchemObj = zod
 
         return thisYear - myYear > 10;
       },
-      {
-        error: "age > 10",
-      },
+      { message: "You must be older than 10." },
     ),
   })
   .refine(
@@ -38,7 +36,7 @@ export  const RegisterSchemObj = zod
       return data.password === data.rePassword;
     },
     {
-      error: "dont match",
+      message: "Passwords do not match.",
       path: ["rePassword"],
     },
   );

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { counterContext } from "./context/counter.context";
 
 export default function About() {

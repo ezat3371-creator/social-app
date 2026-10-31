@@ -1,4 +1,4 @@
-import { zodResolver } from "@hookform/resolvers/zod/src/zod.js";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, TextInput } from "flowbite-react";
 import { useForm } from "react-hook-form";
 import { IoPersonSharp } from "react-icons/io5";
@@ -16,8 +16,6 @@ export default function Login() {
   const [isLoading, setLoading] = useState(false);
 
   const navigate = useNavigate()
-
-  const [login,setLogin] = useState(null)
 
   const {
     handleSubmit,
@@ -37,7 +35,6 @@ export default function Login() {
       const res = await SignIn(data);
       if (res?.success){
       localStorage.setItem('tkn', res?.data?.token)
-      setLogin(res?.data?.token);
       toast.success(res.message);
       navigate('/feed')
       }
